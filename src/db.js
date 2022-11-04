@@ -2,10 +2,11 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_CONNECT } = process.env;
+import config from './config'
+
 
 const sequelize = new Sequelize(
-  `${process.env.DB_CONNECT}`,
+  `${config.DB_CONNECT}`,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
