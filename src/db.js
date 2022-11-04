@@ -5,7 +5,7 @@ const path = require("path");
 const config = require('./config');
 
 const sequelize = new Sequelize(
-  'postgres://vbnivxlv:zAiJaWofmLIzhab_oRqzUnDV90i58OT9@babar.db.elephantsql.com/vbnivxlv',
+  `${config.DB_CONNECT}`,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
