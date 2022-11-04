@@ -2,11 +2,10 @@
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-//const { DB_CONNECT } = require('./config');
-
+const { DB_CONNECT } = require('./config');
 
 const sequelize = new Sequelize(
-  `${process.env.DB_CONNECT}`,
+  `${DB_CONNECT}`,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
